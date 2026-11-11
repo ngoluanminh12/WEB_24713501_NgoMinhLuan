@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ip" type="text" placeholder="nhap noi dung">
+    <button id="update">Cap Nhat</button>
+    <p id="op">Noi dung sau cap nhat</p>
+
+    <script>
+        var ip  = document.getElementById("ip")
+        var update = document.getElementById("update")
+        var op = document.getElementById("op")
+
+        function updateContent(){
+            op.textContent = ip.value
+        }
+
+        update.onclick = updateContent
+    </script>
+    <body>
+</html>

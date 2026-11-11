@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra Regex</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Bài 1: Chỉ gồm chữ số</h2>
+    <input type="text" id="txt1" placeholder="Nhập chuỗi">
+    <button id="btn1">Kiểm tra</button>
+    <p id="result1"></p>
+
+    <h2>Bài 2: Mã sinh viên gồm đúng 10 chữ số</h2>
+    <input type="text" id="txt2" placeholder="Nhập mã sinh viên">
+    <button id="btn2">Kiểm tra</button>
+    <p id="result2"></p>
+
+    <h2>Bài 3: Tên đăng nhập</h2>
+    <p>Dài từ 5 đến 15 ký tự, gồm chữ thường, chữ số và dấu _.</p>
+    <input type="text" id="txt3" placeholder="Nhập tên đăng nhập">
+    <button id="btn3">Kiểm tra</button>
+    <p id="result3"></p>
+
+    <h2>Bài 4: Số điện thoại</h2>
+    <p>Gồm đúng 10 chữ số và bắt đầu bằng số 0.</p>
+    <input type="text" id="txt4" placeholder="Nhập số điện thoại">
+    <button id="btn4">Kiểm tra</button>
+    <p id="result4"></p>
+
+    <h2>Bài 5: Email đơn giản</h2>
+    <input type="text" id="txt5" placeholder="Nhập email">
+    <button id="btn5">Kiểm tra</button>
+    <p id="result5"></p>
+
+    <h2>Bài 6: Mã lớp</h2>
+    <p>Gồm 2 chữ cái in hoa và 3 chữ số.</p>
+    <input type="text" id="txt6" placeholder="Nhập mã lớp">
+    <button id="btn6">Kiểm tra</button>
+    <p id="result6"></p>
+
+    <h2>Bài 7: Ngày dạng dd/mm/yyyy</h2>
+    <p>Chỉ kiểm tra khuôn dạng, chưa kiểm tra ngày hợp lệ.</p>
+    <input type="text" id="txt7" placeholder="Ví dụ: 14/10/2026">
+    <button id="btn7">Kiểm tra</button>
+    <p id="result7"></p>
+
+    <script>
+        $(document).ready(function() {
+
+            // Hàm kiểm tra Regex dùng chung
+            function kiemtra(txt, result, pattern) {
+                let chuoi = $(txt).val();
+
+                if (pattern.test(chuoi)) {
+                    $(result).text("ĐÚNG").css("color", "green");
+                } else {
+                    $(result).text("SAI").css("color", "red");
+                }
+            }
+
+            // Bài 1: Chỉ gồm chữ số
+            $("#btn1").on("click", function() {
+                kiemtra("#txt1", "#result1", /^\d+$/);
+            });
+
+            // Bài 2: Mã sinh viên
+            $("#btn2").on("click", function() {
+                kiemtra("#txt2", "#result2", /^\d{10}$/);
+            });
+
+            // Bài 3: Tên đăng nhập
+            $("#btn3").on("click", function() {
+                kiemtra("#txt3", "#result3", /^[a-z0-9_]{5,15}$/);
+            });
+
+            // Bài 4: Số điện thoại
+            $("#btn4").on("click", function() {
+                kiemtra("#txt4", "#result4", /^0\d{9}$/);
+            });
+
+            // Bài 5: Email đơn giản
+            $("#btn5").on("click", function() {
+                kiemtra("#txt5", "#result5",
+                    /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/);
+            });
+
+            // Bài 6: Mã lớp
+            $("#btn6").on("click", function() {
+                kiemtra("#txt6", "#result6", /^[A-Z]{2}\d{3}$/);
+            });
+
+            // Bài 7: Ngày dd/mm/yyyy
+            $("#btn7").on("click", function() {
+                kiemtra("#txt7", "#result7", /^\d{2}\/\d{2}\/\d{4}$/);
+            });
+
+        });
+    </script>
+
+</body>
+</html>

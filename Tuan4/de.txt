@@ -1,0 +1,29 @@
+1. Đổi màu chữ khi click nút
+Tạo 1 nút bấm và 1 đoạn văn bản. Khi click nút, đổi màu chữ của đoạn văn sang màu đỏ.
+
+2. Ẩn/hiện phần tử
+Tạo 1 nút "Ẩn/Hiện" và 1 hình ảnh (hoặc div). Click nút thì toggle hiển thị/ẩn phần tử đó.
+
+3. Đếm số lần click
+Tạo 1 nút bấm và 1 đoạn text hiển thị số lần đã click. Mỗi lần click, số đếm tăng lên 1.
+
+4. Thay đổi nội dung văn bản
+Tạo 1 input text và 1 nút "Cập nhật". Khi click nút, lấy giá trị từ input và hiển thị vào 1 thẻ <p> bên dưới.
+
+5. Đổi màu nền trang bằng danh sách màu
+Tạo 3-4 nút với các màu khác nhau (Đỏ, Xanh, Vàng...). Click nút nào thì nền trang đổi sang màu đó.
+
+6. Thêm phần tử vào danh sách (to-do đơn giản)
+Tạo 1 input và nút "Thêm". Khi nhập text và bấm nút, thêm 1 thẻ <li> mới vào danh sách <ul>.
+
+7. Xóa phần tử khỏi danh sách
+Mở rộng bài 6: thêm nút "Xóa" (x) bên cạnh mỗi <li>, click vào thì xóa mục đó khỏi danh sách.
+
+8. Kiểm tra độ dài chuỗi nhập vào
+Tạo 1 ô input, khi người dùng gõ (dùng sự kiện input), hiển thị ngay số ký tự đã nhập bên dưới.
+
+9. Đổi kiểu chữ (bold/italic) khi hover
+Tạo 1 đoạn văn bản, khi rê chuột vào (mouseover) thì chữ in đậm, khi rê ra (mouseout) thì trở lại bình thường.
+
+10. Form kiểm tra đơn giản (validate rỗng)
+Tạo form có 1 input và nút "Gửi". Nếu input rỗng khi bấm nút, hiển thị thông báo lỗi màu đỏ bên dưới; nếu có dữ liệu, hiển thị thông báo thành công.

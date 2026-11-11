@@ -1,0 +1,193 @@
+/* Câu 1 */
+body {
+    display: flex;                          /* dùng flexbox để canh giữa */
+    justify-content: center;                /* canh ngang giữa */
+    font-family: 'Times New Roman', serif;  /* font chữ toàn trang, serif là font chữ dự phòng nếu máy không có TNR */
+}
+
+/* lần 1 khi mới tạo xong các thẻ div, chưa code gì */
+.container {
+        display: grid;                      /* biến .container thành một lưới (grid) để bố trí các phần tử con */
+        grid-template-areas:                /*định nghĩa sơ đồ bố cục*/
+            "nav nav" 
+            "header header" 
+            "section1 aside1" 
+            "section2 aside2" 
+            "footer footer";
+        grid-template-columns: 1fr 1fr;     /*chia layout thành 1 cột = (1fr 1fr). 2fr 1fr là cột 1 > cột 2*/
+        gap: 0px;                           /* khoảng cách giữa các ô trong grid */
+        width: 960px;                       /* khung rộng 960px */
+}
+
+.container div {
+    background-color: white;
+    padding: 0px;
+    margin: 0;
+}
+
+/* Phần gán grid: Mỗi class được gán vào vùng tương ứng trong grid-template-areas */
+.container div.nav { 
+    background-color: #f5f5f5 !important;                       /* div có class nav sẽ nằm trong vùng nav của grid*/
+    grid-area: nav;
+    display: flex;                              
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.container div.header {
+    grid-area: header;
+}
+
+
+
+.container div.section1 {
+    grid-area: section1;
+    color: black;
+    text-align: center;        
+}
+
+.container div.aside1 {
+    grid-area: aside1;
+}
+
+.container div.section2 {
+    grid-area: section2;
+    font-family: 'Arial', sans-serif;
+}
+
+.container div.aside2 {
+    grid-area: aside2;
+}
+
+.container div.footer {
+    grid-area: footer;
+}
+
+/* đi vào chi tiết từng phần */
+/* Câu 2a. phần nav */
+
+#logo {
+    height: 50px;
+    width: 50px;
+}
+
+.nav li {
+    display: inline-block;  /* menu nằm ngang*/
+    margin:  12px;          /* tạo khoảng cách giữa các li */      
+}
+
+.nav a {
+    text-decoration: none;   /*bỏ gạch chân */
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: orange;
+}
+
+a:hover {
+    color: yellowgreen
+}
+
+/* Câu 2b. Phần header */
+.header img {
+    width: 100%;
+}
+
+/* Câu 2c. Phần section1 */
+/* nhảy lên section1 ở trên */
+/* chỉnh lại khoảng cách giữa h1 h4 và p */
+.section1 h1 {
+    margin: 0 0;
+}
+
+.section1 h4 {
+    margin: 0 0;
+}
+.section1 p {
+    font-size: 20px;
+    margin-top: 70px;
+}
+/* Câu 2d. Phần section2 */
+
+.section2 h2 {
+    color: blue;
+    text-shadow: 2px 2px 3px green;
+}
+
+.section2 ol {
+    background-color: rgb(242, 247, 210);
+    width: 40%;
+}
+
+.section2 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Câu 2e. Phần aside1 */
+.aside1 img {
+    width: 100%;
+    height: 100%;
+}
+
+/* aside2 */
+
+.aside2 {
+    padding: 10px;
+}
+
+.aside2 label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.aside2 input,
+.aside2 select,
+.aside2 textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.aside2 textarea {
+    resize: none;
+}
+
+.aside2 button {
+    margin-top: 15px;
+    background-color: #e74c5b;
+    color: #f5f5f5;
+    border: none;
+    padding: 8px 25px;
+    cursor: pointer;
+}
+
+.aside2 button:hover {
+    background-color: #c0392b;
+}
+
+/*footer*/
+
+.container div.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5f5f5 !important;
+    padding: 15px 0;
+}
+
+.footer-left,
+.footer-right {
+    background-color: #f5f5f5 !important;
+    text-align: center;
+}
+.footer h3 {
+    color: orange;
+    margin-bottom: 10px;
+}
+.footer p {
+    color: orange;
+    margin: 5px 0;
+}

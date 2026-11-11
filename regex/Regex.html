@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Hello may cung!</span>
+     <h3>Kiểm tra số điện thoại</h3>
+
+        <input type="text" id="sdt" placeholder="Nhập số điện thoại">
+
+        <button onclick="regex8()">Kiểm tra</button>
+
+        <p id="ketqua"></p>
+    <script>
+        function regex1() {
+        var pattern = /[^abc]/g; //check cac ki tu ko phai abc trong chuoi
+        var st = "abcde"
+        var arr = st.match(pattern)
+        console.log(arr)
+        }
+        regex1()
+
+        function regex2() {
+        var pattern = /[^aeiou]/g; //xoa cac ki tu ko phai nguyen am trong chuoi
+        var st = "programming"
+        var arr = st.replace(pattern,"")
+        console.log(arr)
+        }
+        regex2()
+
+        function regex3() {
+        var pattern = /[^a-z0-9]/; //tach tai moi ki tu ko phai chu hoac so
+        var st = "a1,b2;c3"
+        var arr = st.split(pattern)
+        console.log(arr)
+        }
+        regex3()
+    
+        function regex4() {
+        var pattern =  /[A-Z]/g; //tim cac ki tu in hoa trong chuoi
+        var st = "Học ReactJS Và TypeScript"
+        var arr = st.match(pattern)
+        console.log(arr)
+        }
+    
+        function regex5() {
+        var pattern =  /CNTT-[A-E]/g; //tim cac ma lop trong chuoi
+        var st = "CNTT-A CNTT-E CNTT-C"
+        var arr = st.match(pattern)
+        console.log(arr)
+        }
+        regex5()
+    
+        function regex6() {
+        var pattern =  /^http/; //kiem tra chuoi co bat dau bang http
+        var st1 = "https://a.com"
+        var st2 =  "xem http"
+        var arr1 = pattern.test(st1)
+        console.log(arr1)
+        var arr2 = pattern.test(st2)
+        console.log(arr2)
+        }
+        regex6()
+
+        function regex7() {
+        var pattern =  /\.jsx$/; //kiem tra chuoi co ket thuc bang .jsx
+        var st1 = "App.jsx"
+        var st2 =  "App.jsx.bak"
+        var arr1 = pattern.test(st1)
+        console.log(arr1)
+        var arr2 = pattern.test(st2)
+        console.log(arr2)
+        }
+        regex7()
+
+       
+        function regex8() {
+        var padttern =  /^\d{10}$/; //kiem tra sdt 10 so
+        var st = document.getElementById("sdt").value;
+        var arr = pattern.test(st)
+        console.log(arr)
+        }
+        regex8()
+
+    </script>
+</body>
+</html>

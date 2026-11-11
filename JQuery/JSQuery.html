@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>jQuery - Bookstore Online</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 760px; margin: 30px auto; padding: 0 15px; }
+        .book { border: 1px solid #ccc; border-radius: 6px; padding: 10px; margin: 8px 0; }
+        .price { color: #c0392b; font-weight: bold; margin: 4px 0; }
+        .featured { background: #fff3cd; border-color: #f1c40f; }
+        .selected { background: #d6eaf8; }
+        .added { background: #27ae60; color: #fff; }
+        .error { color: red; }
+        button { padding: 6px 12px; cursor: pointer; margin: 4px 2px; }
+        input, select { padding: 6px; margin: 4px 0; }
+        #box { width: 100px; height: 100px; background: #3498db; }
+    </style>
+</head>
+<body>
+    <h1 id="title">Chào mừng đến Bookstore Online</h1>
+    <p class="note">Đây là một đoạn mô tả.</p>
+
+    <div id="book-list">
+    <div class="book"><h3>Đắc Nhân Tâm</h3><p class="price">120.000đ</p></div>
+    <div class="book"><h3>Tư Duy Nhanh và Chậm</h3><p class="price">150.000đ</p></div>
+    <div class="book"><h3>Nhà Giả Kim</h3><p class="price">89.000đ</p></div>
+    </div>
+
+    <h2 id="title">Sách bán chạy</h2>
+    <p id="price">120.000đ</p>
+    <input type="text" id="search-box" placeholder="Nhập tên sách">
+    <button id="btn-read">Đọc</button>
+    <button id="btn-change">Thay đổi</button>
+
+    <img id="cover" src="https://via.placeholder.com/120x160" alt="Bìa sách">
+    <div id="book" data-id="12" data-genre="fiction">Nhà Giả Kim</div>
+    <label><input type="checkbox" id="agree"> Tôi đồng ý điều khoản</label>
+    <button id="btn-run">Chạy</button>
+    <script>
+        $(function kiem_tra() {
+            console.log("jQuery phiên bản:", $.fn.jquery);
+            $("#title").css("color", "darkblue");
+            $(".note").text("Nội dung này đã bị jQuery thay đổi!");
+    })
+        $(function chon (){
+            $("#book-list").css("background", "#f4f4f4");   // theo ID
+            $(".book").css("border-color", "orange");        // theo class
+            $("h3").css("color", "green");                   // theo thẻ
+            console.log("Số cuốn sách:", $(".book").length); // đếm phần tử
+        })
+
+        $(function chon_nang_cao(){
+            $(".book:first").css("background", "#fadbd8");              // đầu tiên
+            $(".book:last").css("background", "#d5f5e3");               // cuối cùng
+            $(".book:eq(1)").css("background", "#fcf3cf");              // vị trí số 1 (đếm từ 0)
+            $(".book:even").css("font-style", "italic");                // vị trí chẵn (0,2,..)
+            $("[data-genre='fiction']").css("border", "3px solid blue");// theo thuộc tính
+            $("#book-list > .book").css("padding", "15px");             // con trực tiếp
+            $(".book h3:contains('Tư Duy')").css("color", "red");  
+        })
+
+        $("#btn-read").on("click", function () {
+        console.log("text:", $("#title").text());
+        console.log("html:", $("#price").html());
+        console.log("val :", $("#search-box").val());
+        });
+
+        $("#btn-change").on("click", function () {
+        $("#title").text("Sách mới về <b>tuần này</b>");   // <b> hiện nguyên chữ
+        $("#price").html("<strong>99.000đ</strong>");       // <strong> được render
+        $("#search-box").val("Nhà giả kim");
+        });
+
+        $("#btn-run").on("click", function () {
+        // attr: đọc/ghi thuộc tính HTML
+        console.log("alt =", $("#cover").attr("alt"));
+        $("#cover").attr("alt", "Bìa Nhà Giả Kim");
+
+        // data: đọc thuộc tính data-*
+        console.log("id =", $("#book").data("id"));
+        console.log("genre =", $("#book").data("genre"));
+
+        // prop: dùng cho true/false (checked, disabled)
+        $("#agree").prop("checked", true);
+        console.log("Đã tick?", $("#agree").prop("checked"));
+        });
+    </script>
+    
+</body>
+</html>

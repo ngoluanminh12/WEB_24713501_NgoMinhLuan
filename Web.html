@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mssv = prompt("Nhap ma so SV");
+        var hoten = prompt("Nhap Ho ten SV");
+        var lop = prompt("Nhap Lop");
+
+        document.write("<table border='1' align='center' cellpadding='5' " +
+            "style='border-collapse:collapse; text-align:center; " +
+            "font-family:Times New Roman; font-size:20px'>");
+
+        document.write("<tr><td colspan='3' style='color:#FF66CC; font-weight:bold'>" +
+            "DANH SÁCH SINH VIÊN</td></tr>");
+
+        document.write("<tr><td>MSSV</td><td>Tên</td><td>Lớp</td></tr>");
+
+        document.write("<tr><td>" + mssv + "</td><td>" + hoten +
+            "</td><td>" + lop + "</td></tr>");
+
+        document.write("</table>");
+    </script>
+</body>
+</html>
